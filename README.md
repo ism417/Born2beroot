@@ -90,7 +90,7 @@ both are package manager a software tools that automates the process of installi
 ### Apparmor
 
 <p align="center">
-<img src="knight.png" style="width:500px">
+<img src="knight.jpeg" style="width:500px">
 </p>
 AppArmor is a Mandatory Access Control (MAC) system built on Linux's LSM (Linux Security Modules) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.
 AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux, the rules applied do not depend on the user, Each profile can be loaded either in enforcing or complaining mode. The former enforces the policy and reports violation attempts, while the latter does not enforce the policy but still logs the system calls that would have been denied.
@@ -115,11 +115,11 @@ The significant advantage offered by SSH is the use of encryption to ensure a se
 Encryption Techniques:
     1.  Symmetrical encryption
 <p align="center">
-<img src="sym.gif" style="width:500px">
+<img src="sym.png" style="width:500px">
 </p>
     2.  Asymmetrical encryption
 <p align="center">
-<img src="asym.gif" style="width:500px">
+<img src="asym.png" style="width:500px">
 </p>
 for more detils : https://www.adsmurai.com/en/articles/how-to-generate-secure-ssh-keys
 
