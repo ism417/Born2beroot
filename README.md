@@ -9,11 +9,12 @@ Is a technology that allows us to create multiple simulated environments of dedi
 ### Virtual machine
 Is a sub computer (guest) with  it own OS, in your computer (host). the hypervisor provide the guest whit the hardware (CPU, RAM, Memory ...) needed,
 
-###H ypervisor
+### Hypervisor
 A hypervisor is software that virtualizes real physical resources and acts as a medium to make them available to virtual machines.
 <p align="center">
 <img src="Hypervisor-Types.png" style="width:500px">
 </p>
+
 ### Operating system
 Most of the time, there are several different computer programs running at the same time, and they all need to access your computer’s central processing unit (CPU), memory, and storage. The operating system coordinates all of this to make sure each program gets what it needs. ( it acts as an intermediary between computer software and hardware).
 <p align="center">
@@ -30,7 +31,7 @@ User and kernel modes are modes of operation where a program can be executed. Wh
 Is an operating system that have a lot of sources whitch make it easier for us to work with it, can run on every architecture available in the market, Support for an extensive list of architectures means that it can run on older and newer computer systems and processors.
 
 #### Difference between Debian & Rocky
-### 🔴Debian
+#### 🔴Debian
 - Debian can be easily upgraded from one stable version to another.
 
 - Supported 32bit.
@@ -41,7 +42,7 @@ Is an operating system that have a lot of sources whitch make it easier for us t
 
 - The mother of many descendant operating systems such as Ubuntu.
 
-### 🔴Rocky
+#### 🔴Rocky
 
 - it is better to install a new Rocky version rather than go to upgrade the older version, and (this is difficult).
 
