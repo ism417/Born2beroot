@@ -91,8 +91,8 @@ both are package manager a software tools that automates the process of installi
 <p align="center">
 <img src="knight.jpeg" style="width:500px">
 </p>
-AppArmor is a Mandatory Access Control (MAC) system built on Linux's LSM (Linux Security Modules) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.\
-AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux, the rules applied do not depend on the user, Each profile can be loaded either in enforcing or complaining mode. The former enforces the policy and reports violation attempts, while the latter does not enforce the policy but still logs the system calls that would have been denied.\
+AppArmor is a Mandatory Access Control (MAC) system built on Linux's LSM (Linux Security Modules) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.
+AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux, the rules applied do not depend on the user, Each profile can be loaded either in enforcing or complaining mode. The former enforces the policy and reports violation attempts, while the latter does not enforce the policy but still logs the system calls that would have been denied.
 for more detiles :https://askubuntu.com/questions/236381/what-is-apparmor
 <p align="center">
 <img src="apparmor.png" style="width:500px">
@@ -103,12 +103,12 @@ for more detiles :https://askubuntu.com/questions/236381/what-is-apparmor
 <p align="center">
 <img src="wall.gif" style="width:500px">
 </p>
-UFW (Uncomplicated Firewall) is, as its name suggests, a simple command-line firewall. A firewall is a program that monitors and controls data traffic between a local computer and the network at large. It decides whether to allow or block the traffic according to a set of security rules.\
-When we talk about traffic and networks, we must understand two things: IP addresses and ports. On the internet, data is transferred from one computer to the other using their IP addresses, which look something like this: 109.234.160.5.\
+UFW (Uncomplicated Firewall) is, as its name suggests, a simple command-line firewall. A firewall is a program that monitors and controls data traffic between a local computer and the network at large. It decides whether to allow or block the traffic according to a set of security rules.
+When we talk about traffic and networks, we must understand two things: IP addresses and ports. On the internet, data is transferred from one computer to the other using their IP addresses, which look something like this: 109.234.160.5.
 But to avoid conflicts between the various internet protocols, every computer separates the access paths thanks to specified ports, marked after the IP address, like this: 109.234.160.5:80 (port #80).
 
 ### SSH
-Ssh or (Secure Shell Protocol) is a protocol(a set of rules) that allows 2 machines to communicate securely over a network(Client(Local machine) and Server(Remote machine)). It uses TCP to establish a stable connection and reliable data transfer between the client and the server. It leverages TCP's features such as error checking and congestion control to ensure data integrity and reliability. TCP is a transport layer protocol that manages the individual 'conversations' between web servers and web clients. It ensures data is sent and received in the order it was transmitted and that no data is lost or dropped.\
+Ssh or (Secure Shell Protocol) is a protocol(a set of rules) that allows 2 machines to communicate securely over a network(Client(Local machine) and Server(Remote machine)). It uses TCP to establish a stable connection and reliable data transfer between the client and the server. It leverages TCP's features such as error checking and congestion control to ensure data integrity and reliability. TCP is a transport layer protocol that manages the individual 'conversations' between web servers and web clients. It ensures data is sent and received in the order it was transmitted and that no data is lost or dropped.
 The significant advantage offered by SSH is the use of encryption to ensure a secure transfer of information between the host and the client.
 Encryption Techniques:
 ##### Symmetrical encryption
@@ -131,7 +131,7 @@ https://medium.com/@hellomudit/understanding-ssh-workflow-66a0e8d4bf65
 </p>
 
 #### the what
-sudo or (super-user do) is a program(group) that allows system administrators to give specific users some permissions of the root such as executing some root’s commands so (make a user most powerful). Not all users could use Sudo only Sudo's group members.\
+sudo or (super-user do) is a program(group) that allows system administrators to give specific users some permissions of the root such as executing some root’s commands so (make a user most powerful). Not all users could use Sudo only Sudo's group members.
 The root is the user name or account that by default has access to all commands and files on a Linux or other Unix-like operating system. It is also referred to as the root account, root user, and superuser.
 
 #### the why
