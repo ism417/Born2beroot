@@ -153,47 +153,47 @@ is a Linux task manager that allows us to execute commands automatically at a sp
 wall displays a message, or the contents of a file, or otherwise its standard input, on the terminals of all currently logged in users.
 #### monitoring.sh
 
-The architecture of your operating system and its kernel version:\
+* The architecture of your operating system and its kernel version:\
 		uname -a\
-The number of physical processors:\
+* The number of physical processors:\
 		grep "physical id" /proc/cpuinfo |  uniq | wc -l
-The number of virtual processors:\
+* The number of virtual processors:\
 		grep processor /proc/cpuinfo | sort -u | wc -l\
-The current available RAM on your server and its utilization rate as a percentage:\
+* The current available RAM on your server and its utilization rate as a percentage:\
 		free --mega |grep "Mem:" | awk '{printf("#Memory Usage: %i/%iMB (%.2f%%)\n"$3, $2, ($3/$2)*100)}'\
-The current available memory on your server and its utilization rate as a percentage:\
+* The current available memory on your server and its utilization rate as a percentage:\
 		df -h --total | grep total | awk '{printf("#Disk Usage: %i/%iGb (%.2f%%)\n", $3*1024, $2,$5)}'\
-The current utilization rate of your processors as a percentage:\
+* The current utilization rate of your processors as a percentage:\
 		mpstat | grep 'all' | awk '{printf("%.1f%%"),100 - $13}'\
-The date and time of the last reboot:\
+* The date and time of the last reboot:\
 		who -b | awk '$1 == "system" {print $3 " " $4}'\
-Whether LVM is active or not:\
+* Whether LVM is active or not:\
 		if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi\
-The number of active connections:\
+* The number of active connections:\
 		ss -s | grep TCP: | tr ',' ' '| awk '{print $4}'\
-The number of users using the server:\
+* The number of users using the server:\
 		who | awk '{print($1)}'| sort -u | wc -l\
-The IPv4 address of your server and its MAC (Media Access Control) address:\
+* The IPv4 address of your server and its MAC (Media Access Control) address:\
 		hostname -I \
 		ip link show | grep "ether" | awk '{printf("(%s)",$2)}'\
-The number of commands executed with the sudo program:\
+* The number of commands executed with the sudo program:\
 		ls -l /var/log/sudo/00/00 | wc -l\
 ### Partitions
 
-A disk partition is the reservation of a region on the disk so each region can be managed separately, the partitioning data is stored on special region of the disk called Partitioning table in the MBR (Master boot record).
+A disk partition is the reservation of a region on the disk so each region can be managed separately, the partitioning data is stored on special region of the disk called Partitioning table in the MBR (Master boot record).\
 Master Boot Record is a sector that resides at the very beginning of a disk. it holds data for the disks partitioning and Bootloader instructions to where to find a bootmanager on the dist. It only allows for 4 Partitions, 3 Primary and 1 Extended. 
-Partitions types:
- - Primary: a general type partition
- - extended: is a partition that can be divided into multiple sub-partitions called Logical partitions
- BIOS can only boot systems that reside in primary partitions so in order to use Logical partition as root filesystem the boot manager of the OS must be in a separate Primary partition.
+Partitions types:\
+ - Primary: a general type partition\
+ - extended: is a partition that can be divided into multiple sub-partitions called Logical partitions\
+BIOS can only boot systems that reside in primary partitions so in order to use Logical partition as root filesystem the boot manager of the OS must be in a separate Primary partition.\
 Filesystem is a method or a structure the OS follows in order to store or retrieve data from a partition (NTFS, APFS, FAR32, EXT3, EXT4 ...). Filesystem data is stored on the firstmust sector of the partition, called Superblock and it contains the filesystem type, partition label, and a UUID.
 for more details : https://miro.com/app/board/uXjVP37UxCE=/
 
 #### LVM
 
-Logical Volume Manager (LVM) is a software tool used in computer systems to manage and organize storage space more flexibly. It allows you to create virtual partitions called logical volumes that can span across multiple physical hard drives.
-• Physical Volume (PV): physical storage device. It can be a hard disk, an SD card, a floppy disk, etc. This device provides us with storage available to use.
-• Volume Group (VG): to use the space provided by a PV, it must be allocated in a volume group. It is like a virtual storage disk that will be used by logical volumes. VGs can grow over time by adding new VPs.
+Logical Volume Manager (LVM) is a software tool used in computer systems to manage and organize storage space more flexibly. It allows you to create virtual partitions called logical volumes that can span across multiple physical hard drives.\
+• Physical Volume (PV): physical storage device. It can be a hard disk, an SD card, a floppy disk, etc. This device provides us with storage available to use.\
+• Volume Group (VG): to use the space provided by a PV, it must be allocated in a volume group. It is like a virtual storage disk that will be used by logical volumes. VGs can grow over time by adding new VPs.\
 • Logical volume (LV): these devices will be the ones we will use to create file systems, swaps, virtual machines, etc. If the VG is the storage disk, the LV are the partitions that are made on this disk.
 <p align="center">
 <img src="lvm.png" style="width:500px">
