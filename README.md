@@ -137,23 +137,6 @@ The root is the user name or account that by default has access to all commands 
 #### the why
 It's easy to run only the commands that require special privileges via Sudo; the rest of the time, you work as an unprivileged user, which reduces the damage that mistakes can cause. Auditing/logging: when a Sudo command is executed, the original username and the command are logged.
 
-#### configure sudo 
-
-Set up a strong configuration for your sudo group, you have to comply with the
-following requirements:
-• Authentication using sudo has to be limited to 3 attempts in the event of an incorrect password.
-• A custom message of your choice has to be displayed if an error due to a wrong
-password occurs when using sudo.
-• Each action using sudo has to be archived, both inputs and outputs. The log file
-has to be saved in the /var/log/sudo/ folder.
-• The TTY mode has to be enabled for security reasons.
-• For security reasons too, the paths that can be used by sudo must be restricted.
-Example:
-/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
-<p align="center">
-<img src="config.png" style="width:500px">
-</p>
-
 ### Script monitoring
 
 A shell script is a sequence of commands for which you have a repeated use. This sequence is typically executed by entering the name of the script on the command line. Alternatively, you can use scripts to automate tasks using the cron facility.
@@ -171,29 +154,30 @@ wall displays a message, or the contents of a file, or otherwise its standard in
 #### monitoring.sh
 
 • The architecture of your operating system and its kernel version.
-	#Architecture: $(uname -a)
+	uname -a
 • The number of physical processors.
-	#CPU physical: $(grep "physical id" /proc/cpuinfo |  uniq | wc -l)
+	grep "physical id" /proc/cpuinfo |  uniq | wc -l
 • The number of virtual processors.
-	#vCPU: $(grep processor /proc/cpuinfo | sort -u | wc -l)
+	grep processor /proc/cpuinfo | sort -u | wc -l
 • The current available RAM on your server and its utilization rate as a percentage
-	$(free --mega |grep "Mem:" | awk '{printf("#Memory Usage: %i/%iMB (%.2f%%)\n"), $3, $2, ($3/$2)*100}')
+	free --mega |grep "Mem:" | awk '{printf("#Memory Usage: %i/%iMB (%.2f%%)\n"$3, $2, ($3/$2)*100}'
 • The current available memory on your server and its utilization rate as a percentage.
-	$(df -h --total | grep total | awk '{printf("#Disk Usage: %i/%iGb (%.2f%%)\n", $3*1024, $2,$5)}')
+	df -h --total | grep total | awk '{printf("#Disk Usage: %i/%iGb (%.2f%%)\n", $3*1024, $2,$5)}'
 • The current utilization rate of your processors as a percentage.
-	#CPU load: $(mpstat | grep 'all' | awk '{printf("%.1f%%"),100 - $13}')
+	mpstat | grep 'all' | awk '{printf("%.1f%%"),100 - $13}'
 • The date and time of the last reboot.
-	#Last boot: $(who -b | awk '$1 == "system" {print $3 " " $4}')
+	who -b | awk '$1 == "system" {print $3 " " $4}'
 • Whether LVM is active or not.
-	#LVM use: $(if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi)
+	if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi
 • The number of active connections.
-	#Connections TCP: $(ss -s | grep TCP: | tr ',' ' '| awk '{print $4}') ESTABLISHED
+	ss -s | grep TCP: | tr ',' ' '| awk '{print $4}'
 • The number of users using the server.
-	#User log: $(who | awk '{print($1)}'| sort -u | wc -l)
+	who | awk '{print($1)}'| sort -u | wc -l
 • The IPv4 address of your server and its MAC (Media Access Control) address.
-	#Network: IP $(hostname -I) $(ip link show | grep "ether" | awk '{printf("(%s)",$2)}')
+	hostname -I 
+	ip link show | grep "ether" | awk '{printf("(%s)",$2)}'
 • The number of commands executed with the sudo program.
-	#Sudo: $(ls -l /var/log/sudo/00/00 | wc -l) cmd
+	ls -l /var/log/sudo/00/00 | wc -l
 ### Partitions
 
 A disk partition is the reservation of a region on the disk so each region can be managed separately, the partitioning data is stored on special region of the disk called Partitioning table in the MBR (Master boot record).
