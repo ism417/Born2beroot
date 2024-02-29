@@ -182,8 +182,8 @@ wall displays a message, or the contents of a file, or otherwise its standard in
 
 A disk partition is the reservation of a region on the disk so each region can be managed separately, the partitioning data is stored on special region of the disk called Partitioning table in the MBR (Master boot record).\
 Master Boot Record is a sector that resides at the very beginning of a disk. it holds data for the disks partitioning and Bootloader instructions to where to find a bootmanager on the dist. It only allows for 4 Partitions, 3 Primary and 1 Extended. 
-Partitions types:\
- - Primary: a general type partition\
+Partitions types:
+ - Primary: a general type partition
  - extended: is a partition that can be divided into multiple sub-partitions called Logical partitions\
 BIOS can only boot systems that reside in primary partitions so in order to use Logical partition as root filesystem the boot manager of the OS must be in a separate Primary partition.\
 Filesystem is a method or a structure the OS follows in order to store or retrieve data from a partition (NTFS, APFS, FAR32, EXT3, EXT4 ...). Filesystem data is stored on the firstmust sector of the partition, called Superblock and it contains the filesystem type, partition label, and a UUID.
