@@ -218,5 +218,5 @@ for more details : https://www.youtube.com/watch?v=Eu1WrVjzRy8&t=3s
 * srv : intended for site-specific data served by the system, making it a place to store data that is specifically related to the operation of services provided by the system.
 * tmp : It is a temporary directory used by the OS and several programs for storing temporary files. Also, users may temporarily store files here. Remember that files may be removed without prior notice at any time in this directory.
 * var/log : used for storing system log files.
-* sr0 : This is the identifier for the first CD-ROM or DVD-ROM drive in your system
+* sr0 : This is the identifier for the first CD-ROM or DVD-ROM drive in your system\
 for more details : https://www.javatpoint.com/linux-file-system
