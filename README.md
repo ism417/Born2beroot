@@ -92,7 +92,7 @@ both are package manager a software tools that automates the process of installi
 <img src="knight.jpeg" style="width:500px">
 </p>
 AppArmor is a Mandatory Access Control (MAC) system built on Linux's LSM (Linux Security Modules) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.
-AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux, the rules applied do not depend on the user, Each profile can be loaded either in enforcing or complaining mode. The former enforces the policy and reports violation attempts, while the latter does not enforce the policy but still logs the system calls that would have been denied\
+AppArmor applies a set of rules (known as “profile”) on each program. The profile applied by the kernel depends on the installation path of the program being executed. Contrary to SELinux, the rules applied do not depend on the user, Each profile can be loaded either in enforcing or complaining mode. The former enforces the policy and reports violation attempts, while the latter does not enforce the policy but still logs the system calls that would have been denied
 for more detiles :https://askubuntu.com/questions/236381/what-is-apparmor
 <p align="center">
 <img src="apparmor.png" style="width:500px">
@@ -154,7 +154,7 @@ wall displays a message, or the contents of a file, or otherwise its standard in
 #### monitoring.sh
 
 * The architecture of your operating system and its kernel version:\
-		uname -a\
+		uname -a
 * The number of physical processors:\
 		grep "physical id" /proc/cpuinfo |  uniq | wc -l
 * The number of virtual processors:\
