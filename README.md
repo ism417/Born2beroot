@@ -16,6 +16,7 @@ A hypervisor is software that virtualizes real physical resources and acts as a 
 </p>
 
 ## Operating system
+
 Most of the time, there are several different computer programs running at the same time, and they all need to access your computer’s central processing unit (CPU), memory, and storage. The operating system coordinates all of this to make sure each program gets what it needs. ( it acts as an intermediary between computer software and hardware).
 <p align="center">
 <img src="OS.png" style="width:500px">
@@ -86,9 +87,11 @@ both are package manager a software tools that automates the process of installi
 
 - Can't moo.
 
-## Apparmor
 
 <p align="center">
+
+## Apparmor
+
 <img src="knight.jpeg" style="width:500px">
 </p>
 AppArmor is a Mandatory Access Control (MAC) system built on Linux's LSM (Linux Security Modules) interface. In practice, the kernel queries AppArmor before each system call to know whether the process is authorized to do the given operation. Through this mechanism, AppArmor confines programs to a limited set of resources.
@@ -96,11 +99,9 @@ AppArmor applies a set of rules (known as “profile”) on each program. The pr
 for more detiles :https://askubuntu.com/questions/236381/what-is-apparmor
 <p align="center">
 <img src="apparmor.png" style="width:500px">
-</p>
 
 ## UFW
 
-<p align="center">
 <img src="wall.gif" style="width:500px">
 </p>
 UFW (Uncomplicated Firewall) is, as its name suggests, a simple command-line firewall. A firewall is a program that monitors and controls data traffic between a local computer and the network at large. It decides whether to allow or block the traffic according to a set of security rules.
@@ -108,6 +109,7 @@ When we talk about traffic and networks, we must understand two things: IP addre
 But to avoid conflicts between the various internet protocols, every computer separates the access paths thanks to specified ports, marked after the IP address, like this: 109.234.160.5:80 (port #80).
 
 ## SSH
+
 Ssh or (Secure Shell Protocol) is a protocol(a set of rules) that allows 2 machines to communicate securely over a network(Client(Local machine) and Server(Remote machine)). It uses TCP to establish a stable connection and reliable data transfer between the client and the server. It leverages TCP's features such as error checking and congestion control to ensure data integrity and reliability. TCP is a transport layer protocol that manages the individual 'conversations' between web servers and web clients. It ensures data is sent and received in the order it was transmitted and that no data is lost or dropped.
 The significant advantage offered by SSH is the use of encryption to ensure a secure transfer of information between the host and the client.
 Encryption Techniques:
