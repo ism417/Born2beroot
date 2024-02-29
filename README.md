@@ -158,26 +158,26 @@ wall displays a message, or the contents of a file, or otherwise its standard in
 * The number of physical processors:\
 		grep "physical id" /proc/cpuinfo |  uniq | wc -l
 * The number of virtual processors:\
-		grep processor /proc/cpuinfo | sort -u | wc -l\
+		grep processor /proc/cpuinfo | sort -u | wc -l
 * The current available RAM on your server and its utilization rate as a percentage:\
-		free --mega |grep "Mem:" | awk '{printf("#Memory Usage: %i/%iMB (%.2f%%)\n"$3, $2, ($3/$2)*100)}'\
+		free --mega |grep "Mem:" | awk '{printf("#Memory Usage: %i/%iMB (%.2f%%)\n"$3, $2, ($3/$2)*100)}'
 * The current available memory on your server and its utilization rate as a percentage:\
-		df -h --total | grep total | awk '{printf("#Disk Usage: %i/%iGb (%.2f%%)\n", $3*1024, $2,$5)}'\
+		df -h --total | grep total | awk '{printf("#Disk Usage: %i/%iGb (%.2f%%)\n", $3*1024, $2,$5)}'
 * The current utilization rate of your processors as a percentage:\
-		mpstat | grep 'all' | awk '{printf("%.1f%%"),100 - $13}'\
+		mpstat | grep 'all' | awk '{printf("%.1f%%"),100 - $13}'
 * The date and time of the last reboot:\
-		who -b | awk '$1 == "system" {print $3 " " $4}'\
+		who -b | awk '$1 == "system" {print $3 " " $4}'
 * Whether LVM is active or not:\
-		if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi\
+		if [ $(lsblk | grep "lvm" | wc -l) -eq 0 ]; then echo no; else echo yes; fi
 * The number of active connections:\
-		ss -s | grep TCP: | tr ',' ' '| awk '{print $4}'\
+		ss -s | grep TCP: | tr ',' ' '| awk '{print $4}'
 * The number of users using the server:\
-		who | awk '{print($1)}'| sort -u | wc -l\
-* The IPv4 address of your server and its MAC (Media Access Control) address:\
-		hostname -I \
-		ip link show | grep "ether" | awk '{printf("(%s)",$2)}'\
+		who | awk '{print($1)}'| sort -u | wc -l
+* The IPv4 address of your server and its MAC (Media Access Control) address:
+		hostname -I 
+		ip link show | grep "ether" | awk '{printf("(%s)",$2)}'
 * The number of commands executed with the sudo program:\
-		ls -l /var/log/sudo/00/00 | wc -l\
+		ls -l /var/log/sudo/00/00 | wc -l
 ### Partitions
 
 A disk partition is the reservation of a region on the disk so each region can be managed separately, the partitioning data is stored on special region of the disk called Partitioning table in the MBR (Master boot record).\
