@@ -15,7 +15,7 @@ A hypervisor is software that virtualizes real physical resources and acts as a 
 <img src="Hypervisor-Types.png" style="width:500px">
 </p>
 
-### Operating system
+## Operating system
 Most of the time, there are several different computer programs running at the same time, and they all need to access your computer’s central processing unit (CPU), memory, and storage. The operating system coordinates all of this to make sure each program gets what it needs. ( it acts as an intermediary between computer software and hardware).
 <p align="center">
 <img src="OS.png" style="width:500px">
@@ -86,7 +86,7 @@ both are package manager a software tools that automates the process of installi
 
 - Can't moo.
 
-### Apparmor
+## Apparmor
 
 <p align="center">
 <img src="knight.jpeg" style="width:500px">
@@ -98,7 +98,7 @@ for more detiles :https://askubuntu.com/questions/236381/what-is-apparmor
 <img src="apparmor.png" style="width:500px">
 </p>
 
-### UFW
+## UFW
 
 <p align="center">
 <img src="wall.gif" style="width:500px">
@@ -107,7 +107,7 @@ UFW (Uncomplicated Firewall) is, as its name suggests, a simple command-line fir
 When we talk about traffic and networks, we must understand two things: IP addresses and ports. On the internet, data is transferred from one computer to the other using their IP addresses, which look something like this: 109.234.160.5.
 But to avoid conflicts between the various internet protocols, every computer separates the access paths thanks to specified ports, marked after the IP address, like this: 109.234.160.5:80 (port #80).
 
-### SSH
+## SSH
 Ssh or (Secure Shell Protocol) is a protocol(a set of rules) that allows 2 machines to communicate securely over a network(Client(Local machine) and Server(Remote machine)). It uses TCP to establish a stable connection and reliable data transfer between the client and the server. It leverages TCP's features such as error checking and congestion control to ensure data integrity and reliability. TCP is a transport layer protocol that manages the individual 'conversations' between web servers and web clients. It ensures data is sent and received in the order it was transmitted and that no data is lost or dropped.
 The significant advantage offered by SSH is the use of encryption to ensure a secure transfer of information between the host and the client.
 Encryption Techniques:
@@ -124,7 +124,7 @@ for more details :
 https://www.adsmurai.com/en/articles/how-to-generate-secure-ssh-keys
 https://medium.com/@hellomudit/understanding-ssh-workflow-66a0e8d4bf65
 
-### SUDO
+## SUDO
 
 <p align="center">
 <img src="sudo.gif" style="width:500px">
@@ -137,7 +137,7 @@ The root is the user name or account that by default has access to all commands 
 #### The why
 It's easy to run only the commands that require special privileges via Sudo; the rest of the time, you work as an unprivileged user, which reduces the damage that mistakes can cause. Auditing/logging: when a Sudo command is executed, the original username and the command are logged.
 
-### Script monitoring
+## Script monitoring
 
 A shell script is a sequence of commands for which you have a repeated use. This sequence is typically executed by entering the name of the script on the command line. Alternatively, you can use scripts to automate tasks using the cron facility.
 
@@ -178,7 +178,7 @@ wall displays a message, or the contents of a file, or otherwise its standard in
 		ip link show | grep "ether" | awk '{printf("(%s)",$2)}'
 * The number of commands executed with the sudo program:\
 		ls -l /var/log/sudo/00/00 | wc -l
-### Partitions
+## Partitions
 
 A disk partition is the reservation of a region on the disk so each region can be managed separately, the partitioning data is stored on special region of the disk called Partitioning table in the MBR (Master boot record).\
 Master Boot Record is a sector that resides at the very beginning of a disk. it holds data for the disks partitioning and Bootloader instructions to where to find a bootmanager on the dist. It only allows for 4 Partitions, 3 Primary and 1 Extended. 
@@ -189,7 +189,7 @@ BIOS can only boot systems that reside in primary partitions so in order to use 
 Filesystem is a method or a structure the OS follows in order to store or retrieve data from a partition (NTFS, APFS, FAR32, EXT3, EXT4 ...). Filesystem data is stored on the firstmust sector of the partition, called Superblock and it contains the filesystem type, partition label, and a UUID.
 for more details : https://miro.com/app/board/uXjVP37UxCE=/
 
-#### LVM
+### LVM
 
 Logical Volume Manager (LVM) is a software tool used in computer systems to manage and organize storage space more flexibly. It allows you to create virtual partitions called logical volumes that can span across multiple physical hard drives.\
 • Physical Volume (PV): physical storage device. It can be a hard disk, an SD card, a floppy disk, etc. This device provides us with storage available to use.\
