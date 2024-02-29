@@ -130,25 +130,25 @@ https://medium.com/@hellomudit/understanding-ssh-workflow-66a0e8d4bf65
 <img src="sudo.gif" style="width:500px">
 </p>
 
-#### the what
+#### The what
 sudo or (super-user do) is a program(group) that allows system administrators to give specific users some permissions of the root such as executing some root’s commands so (make a user most powerful). Not all users could use Sudo only Sudo's group members.
 The root is the user name or account that by default has access to all commands and files on a Linux or other Unix-like operating system. It is also referred to as the root account, root user, and superuser.
 
-#### the why
+#### The why
 It's easy to run only the commands that require special privileges via Sudo; the rest of the time, you work as an unprivileged user, which reduces the damage that mistakes can cause. Auditing/logging: when a Sudo command is executed, the original username and the command are logged.
 
 ### Script monitoring
 
 A shell script is a sequence of commands for which you have a repeated use. This sequence is typically executed by entering the name of the script on the command line. Alternatively, you can use scripts to automate tasks using the cron facility.
 
-#### cron
+#### Cron
 
 is a Linux task manager that allows us to execute commands automatically at a specific time, We can automate some tasks just by telling cron what command we want to run at a specific time
 <p align="center">
 <img src="cron.jpeg" style="width:500px">
 </p>
 
-#### wall
+#### Wall
 
 wall displays a message, or the contents of a file, or otherwise its standard input, on the terminals of all currently logged in users.
 #### monitoring.sh
